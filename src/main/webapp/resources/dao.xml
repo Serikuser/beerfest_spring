@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Imports block-->
+    <import resource="database.xml"/>
+
+    <!--DAOs block-->
+    <bean id="registration.dao" class="by.siarhei.beerfest.dao.impl.RegistrationDaoJdbcTemplateBased"
+          depends-on="connectionPool">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+    <bean id="user.dao" class="by.siarhei.beerfest.dao.impl.UserDaoJdbcTemplateBased"
+          depends-on="connectionPool">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+    <bean id="bar.dao" class="by.siarhei.beerfest.dao.impl.BarDaoJdbcTemplateBased"
+          depends-on="connectionPool">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+    <bean id="book.dao" class="by.siarhei.beerfest.dao.impl.BookDaoJdbcTemplateBased"
+          depends-on="connectionPool">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+    <bean id="feed.dao" class="by.siarhei.beerfest.dao.impl.FeedDaoJdbcTemplateBased"
+          depends-on="connectionPool">
+        <constructor-arg ref="jdbcTemplate"/>
+    </bean>
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!--Imports block-->
+    <import resource="job.xml"/>
+    <import resource="commands.xml"/>
+    <import resource="services.xml"/>
+
+    <!--Command provider block-->
+    <bean id="commandProvider" class="by.siarhei.beerfest.command.CommandProvider">
+        <constructor-arg>
+            <map>
+                <entry key="LOGIN" value-ref="login.command"/>
+                <entry key="LOGOUT" value-ref="logout.command"/>
+                <entry key="SIGNUP" value-ref="signup.command"/>
+                <entry key="CHANGE_PASSWORD" value-ref="changePassword.command"/>
+                <entry key="PROFILE" value-ref="profile.command"/>
+                <entry key="SUBMIT_BAR" value-ref="submitBar.command"/>
+                <entry key="PARTICIPANT_LIST_UPDATE" value-ref="participantListUpdate.command"/>
+                <entry key="SUBMIT_BEER" value-ref="submitBeer.command"/>
+                <entry key="SUBMIT_FOOD" value-ref="submitFood.command"/>
+                <entry key="MAKE_BOOK" value-ref="makeBook.command"/>
+                <entry key="BOOK_DELETE" value-ref="bookDelete.command"/>
+                <entry key="CHANGE_LOCALE" value-ref="changeLocale.command"/>
+                <entry key="CONTINUE_REGISTRATION" value-ref="continueRegistration.command"/>
+                <entry key="SELECT_USERS" value-ref="selectUserList.command"/>
+                <entry key="ADD_NEWS" value-ref="addNews.command"/>
+                <entry key="DELETE_NEWS" value-ref="deleteNews.command"/>
+                <entry key="FEED_UPDATE" value-ref="feedUpdate.command"/>
+                <entry key="BOOK_USER" value-ref="userBook.command"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <!--Entity prototype beans block-->
+    <bean id="article" class="by.siarhei.beerfest.entity.impl.Article" scope="prototype"/>
+    <bean id="bar" class="by.siarhei.beerfest.entity.impl.Bar" scope="prototype"/>
+    <bean id="book" class="by.siarhei.beerfest.entity.impl.Book" scope="prototype"/>
+    <bean id="registration" class="by.siarhei.beerfest.entity.impl.Registration" scope="prototype"/>
+    <bean id="user" class="by.siarhei.beerfest.entity.impl.User" scope="prototype"/>
+
+    <!--Service data validator block-->
+    <bean id="serviceDataValidator" class="by.siarhei.beerfest.validator.InputDataValidator"/>
+</beans>

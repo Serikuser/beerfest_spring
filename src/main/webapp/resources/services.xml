@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Services block-->
+    <bean id="accountService" class="by.siarhei.beerfest.service.impl.AccountServiceImpl">
+        <constructor-arg ref="user.dao"/>
+        <constructor-arg ref="serviceDataValidator"/>
+    </bean>
+    <bean id="barService" class="by.siarhei.beerfest.service.impl.BarServiceImpl">
+        <constructor-arg ref="bar.dao"/>
+        <constructor-arg ref="serviceDataValidator"/>
+    </bean>
+    <bean id="bookService" class="by.siarhei.beerfest.service.impl.BookServiceImpl">
+        <constructor-arg ref="book.dao"/>
+    </bean>
+    <bean id="feedUpdateService" class="by.siarhei.beerfest.service.impl.FeedUpdateServiceImpl">
+        <constructor-arg ref="feed.dao"/>
+    </bean>
+    <bean id="languageService" class="by.siarhei.beerfest.service.impl.LanguageServiceImpl"/>
+    <bean id="registrationService" class="by.siarhei.beerfest.service.impl.RegistrationServiceImpl">
+        <constructor-arg ref="registration.dao"/>
+    </bean>
+</beans>

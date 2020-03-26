@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Imports block-->
+    <import resource="dao.xml"/>
+
+    <!--Tasks block-->
+    <bean id="expiredTokenTask" class="by.siarhei.beerfest.job.ExpiredTokensTask">
+        <constructor-arg ref="registration.dao"/>
+    </bean>
+    <bean id="expiredDateTask" class="by.siarhei.beerfest.job.ExpiredDateTask">
+        <constructor-arg ref="registration.dao"/>
+    </bean>
+
+    <!--Jobs block-->
+    <bean id="registrationTokensJob" class="by.siarhei.beerfest.job.RegistrationTokensJob" init-method="init">
+        <constructor-arg ref="expiredTokenTask"/>
+        <constructor-arg ref="expiredDateTask"/>
+    </bean>
+</beans>

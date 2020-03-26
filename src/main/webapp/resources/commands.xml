@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Commands block-->
+    <bean id="addNews.command" class="by.siarhei.beerfest.command.impl.AddNewsCommand">
+        <constructor-arg ref="languageService"/>
+    </bean>
+    <bean id="bookDelete.command" class="by.siarhei.beerfest.command.impl.BookDeleteCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="bookService"/>
+    </bean>
+    <bean id="changeLocale.command" class="by.siarhei.beerfest.command.impl.ChangeLocaleCommand"/>
+    <bean id="changePassword.command" class="by.siarhei.beerfest.command.impl.ChangePasswordCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="accountService"/>
+    </bean>
+    <bean id="continueRegistration.command" class="by.siarhei.beerfest.command.impl.ContinueRegistrationCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="registrationService"/>
+    </bean>
+    <bean id="deleteNews.command" class="by.siarhei.beerfest.command.impl.DeleteNewsCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="feedUpdateService"/>
+    </bean>
+    <bean id="feedUpdate.command" class="by.siarhei.beerfest.command.impl.FeedUpdateCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="feedUpdateService"/>
+    </bean>
+    <bean id="login.command" class="by.siarhei.beerfest.command.impl.LoginCommand">
+        <constructor-arg ref="accountService"/>
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="logout.command" class="by.siarhei.beerfest.command.impl.LogoutCommand"/>
+    <bean id="makeBook.command" class="by.siarhei.beerfest.command.impl.MakeBookCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="bookService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="participantListUpdate.command" class="by.siarhei.beerfest.command.impl.ParticipantListUpdateCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="profile.command" class="by.siarhei.beerfest.command.impl.ProfileCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="selectUserList.command" class="by.siarhei.beerfest.command.impl.SelectUserListCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="accountService"/>
+    </bean>
+    <bean id="signup.command" class="by.siarhei.beerfest.command.impl.SignupCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="accountService"/>
+        <constructor-arg ref="registrationService"/>
+    </bean>
+    <bean id="submitBar.command" class="by.siarhei.beerfest.command.impl.SubmitBarCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="submitBeer.command" class="by.siarhei.beerfest.command.impl.SubmitBeerCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="submitFood.command" class="by.siarhei.beerfest.command.impl.SubmitFoodCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+    <bean id="userBook.command" class="by.siarhei.beerfest.command.impl.UserBookCommand">
+        <constructor-arg ref="languageService"/>
+        <constructor-arg ref="bookService"/>
+        <constructor-arg ref="barService"/>
+    </bean>
+</beans>
