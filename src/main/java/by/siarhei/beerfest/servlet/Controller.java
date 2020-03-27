@@ -1,8 +1,8 @@
 package by.siarhei.beerfest.servlet;
 
-import by.siarhei.beerfest.command.ActionCommand;
 import by.siarhei.beerfest.command.CommandProvider;
 import by.siarhei.beerfest.command.Router;
+import by.siarhei.beerfest.command.api.ActionCommand;
 import by.siarhei.beerfest.config.SpringAppContext;
 
 import javax.servlet.RequestDispatcher;

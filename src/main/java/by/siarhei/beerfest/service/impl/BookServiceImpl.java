@@ -1,10 +1,11 @@
 package by.siarhei.beerfest.service.impl;
 
-import by.siarhei.beerfest.dao.BookDao;
+import by.siarhei.beerfest.dao.api.BookDao;
 import by.siarhei.beerfest.entity.impl.Book;
 import by.siarhei.beerfest.exception.DaoException;
 import by.siarhei.beerfest.exception.ServiceException;
-import by.siarhei.beerfest.service.BookService;
+import by.siarhei.beerfest.factory.impl.EntityBuilder;
+import by.siarhei.beerfest.service.api.BookService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,9 +16,11 @@ public class BookServiceImpl implements BookService {
     private static final Logger logger = LogManager.getLogger();
 
     private BookDao bookDao;
+    private EntityBuilder builder;
 
-    private BookServiceImpl(BookDao bookDao) {
+    private BookServiceImpl(BookDao bookDao,EntityBuilder builder) {
         this.bookDao = bookDao;
+        this.builder = builder;
     }
 
     @Override
@@ -69,8 +72,7 @@ public class BookServiceImpl implements BookService {
     public void deleteBook(long bookId) throws ServiceException {
         try {
             bookDao.delete(bookId);
-        }
-        catch (DaoException e){
+        } catch (DaoException e) {
             logger.error("Cannot delete book ", e);
             throw new ServiceException(e);
         }

@@ -1,3 +1,4 @@
+/*
 package by.siarhei.beerfest.provider;
 
 import by.siarhei.beerfest.entity.impl.Bar;
@@ -76,3 +77,4 @@ public class BarProviderTest {
         Assert.assertNotEquals(actual, expected);
     }
 }
+*/

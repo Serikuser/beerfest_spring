@@ -7,19 +7,24 @@
     <bean id="accountService" class="by.siarhei.beerfest.service.impl.AccountServiceImpl">
         <constructor-arg ref="user.dao"/>
         <constructor-arg ref="serviceDataValidator"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
     <bean id="barService" class="by.siarhei.beerfest.service.impl.BarServiceImpl">
         <constructor-arg ref="bar.dao"/>
         <constructor-arg ref="serviceDataValidator"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
     <bean id="bookService" class="by.siarhei.beerfest.service.impl.BookServiceImpl">
         <constructor-arg ref="book.dao"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
     <bean id="feedUpdateService" class="by.siarhei.beerfest.service.impl.FeedUpdateServiceImpl">
         <constructor-arg ref="feed.dao"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
     <bean id="languageService" class="by.siarhei.beerfest.service.impl.LanguageServiceImpl"/>
     <bean id="registrationService" class="by.siarhei.beerfest.service.impl.RegistrationServiceImpl">
         <constructor-arg ref="registration.dao"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
 </beans>

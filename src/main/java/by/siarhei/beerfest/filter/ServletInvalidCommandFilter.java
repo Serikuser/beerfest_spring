@@ -2,9 +2,9 @@ package by.siarhei.beerfest.filter;
 
 import by.siarhei.beerfest.command.CommandType;
 import by.siarhei.beerfest.command.LocaleType;
+import by.siarhei.beerfest.config.MessageManager;
 import by.siarhei.beerfest.config.SpringAppContext;
-import by.siarhei.beerfest.manager.MessageManager;
-import by.siarhei.beerfest.service.LanguageService;
+import by.siarhei.beerfest.service.api.LanguageService;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

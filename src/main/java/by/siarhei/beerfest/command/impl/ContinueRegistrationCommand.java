@@ -1,13 +1,13 @@
 package by.siarhei.beerfest.command.impl;
 
-import by.siarhei.beerfest.command.ActionCommand;
 import by.siarhei.beerfest.command.LocaleType;
 import by.siarhei.beerfest.command.Router;
+import by.siarhei.beerfest.command.api.ActionCommand;
+import by.siarhei.beerfest.config.ConfigurationManager;
+import by.siarhei.beerfest.config.MessageManager;
 import by.siarhei.beerfest.exception.ServiceException;
-import by.siarhei.beerfest.manager.ConfigurationManager;
-import by.siarhei.beerfest.manager.MessageManager;
-import by.siarhei.beerfest.service.LanguageService;
-import by.siarhei.beerfest.service.RegistrationService;
+import by.siarhei.beerfest.service.api.LanguageService;
+import by.siarhei.beerfest.service.api.RegistrationService;
 import by.siarhei.beerfest.servlet.SessionRequestContent;
 
 /**

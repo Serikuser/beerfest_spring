@@ -1,15 +1,16 @@
 package by.siarhei.beerfest.service.impl;
 
-import by.siarhei.beerfest.dao.RegistrationDao;
-import by.siarhei.beerfest.dao.TransactionManager;
-import by.siarhei.beerfest.dao.impl.RegistrationDaoImpl;
-import by.siarhei.beerfest.dao.impl.UserDaoImpl;
+import by.siarhei.beerfest.dao.api.RegistrationDao;
+import by.siarhei.beerfest.dao.impl.connection.RegistrationDaoImpl;
+import by.siarhei.beerfest.dao.impl.connection.UserDaoImpl;
+import by.siarhei.beerfest.dao.transaction.TransactionManager;
 import by.siarhei.beerfest.entity.StatusType;
 import by.siarhei.beerfest.entity.impl.Registration;
 import by.siarhei.beerfest.exception.DaoException;
 import by.siarhei.beerfest.exception.ServiceException;
+import by.siarhei.beerfest.factory.impl.EntityBuilder;
 import by.siarhei.beerfest.mail.MailThread;
-import by.siarhei.beerfest.service.RegistrationService;
+import by.siarhei.beerfest.service.api.RegistrationService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,9 +21,11 @@ public class RegistrationServiceImpl implements RegistrationService {
     private static final Logger logger = LogManager.getLogger();
 
     private RegistrationDao registrationDao;
+    private EntityBuilder builder;
 
-    public RegistrationServiceImpl(RegistrationDao registrationDao) {
+    public RegistrationServiceImpl(RegistrationDao registrationDao, EntityBuilder builder) {
         this.registrationDao = registrationDao;
+        this.builder = builder;
     }
 
     @Override
@@ -31,13 +34,13 @@ public class RegistrationServiceImpl implements RegistrationService {
         TransactionManager transactionManager = new TransactionManager();
         UserDaoImpl transactionUser = new UserDaoImpl();
         RegistrationDaoImpl transactionRegistration = new RegistrationDaoImpl();
+        transactionManager.openTransaction(transactionUser, transactionRegistration);
         try {
-            Registration registration = registrationDao.findRegistrationByToken(token);
+            Registration registration = transactionRegistration.findRegistrationByToken(token);
             if (!registration.isExpired() && registration.getToken() != null) {
                 int status = StatusType.ACTIVE.getValue();
                 long accountId = registration.getAccountId();
                 long registrationId = registration.getId();
-                transactionManager.openTransaction(transactionUser, transactionRegistration);
                 transactionUser.updateStatusById(accountId, status);
                 transactionRegistration.updateExpiredByToken(registrationId, true);
                 transactionManager.commit();

@@ -1,14 +1,14 @@
 package by.siarhei.beerfest.service.impl;
 
-import by.siarhei.beerfest.dao.UserDao;
+import by.siarhei.beerfest.config.ConfigurationManager;
+import by.siarhei.beerfest.dao.api.UserDao;
 import by.siarhei.beerfest.entity.RoleType;
 import by.siarhei.beerfest.entity.StatusType;
 import by.siarhei.beerfest.entity.impl.User;
 import by.siarhei.beerfest.exception.DaoException;
 import by.siarhei.beerfest.exception.ServiceException;
-import by.siarhei.beerfest.manager.ConfigurationManager;
-import by.siarhei.beerfest.provider.UserProvider;
-import by.siarhei.beerfest.service.AccountService;
+import by.siarhei.beerfest.factory.impl.EntityBuilder;
+import by.siarhei.beerfest.service.api.AccountService;
 import by.siarhei.beerfest.validator.InputDataValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,10 +25,12 @@ public class AccountServiceImpl implements AccountService {
 
     private UserDao userDao;
     private InputDataValidator validator;
+    private EntityBuilder builder;
 
-    private AccountServiceImpl(UserDao userDao, InputDataValidator validator) {
+    private AccountServiceImpl(UserDao userDao, InputDataValidator validator, EntityBuilder builder) {
         this.userDao = userDao;
         this.validator = validator;
+        this.builder = builder;
     }
 
     @Override
@@ -57,7 +59,7 @@ public class AccountServiceImpl implements AccountService {
     public long signupUser(String login, String eMail, String password, RoleType role, StatusType inactive) throws ServiceException {
         String avatarUrl = ConfigurationManager.getProperty(PROPERTIES_DEFAULT_AVATAR_URL);
         try {
-            User user = UserProvider.getInstance().create(login, password, eMail, avatarUrl, role, inactive);
+            User user = builder.buildUser(login, password, eMail, avatarUrl, role, inactive);
             return userDao.create(user);
         } catch (DaoException e) {
             logger.error("Cannot signup new user", e);

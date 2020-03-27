@@ -1,6 +1,6 @@
 package by.siarhei.beerfest.job;
 
-import by.siarhei.beerfest.dao.RegistrationDao;
+import by.siarhei.beerfest.dao.api.RegistrationDao;
 import by.siarhei.beerfest.entity.impl.Registration;
 import by.siarhei.beerfest.exception.DaoException;
 import org.apache.logging.log4j.LogManager;

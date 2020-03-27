@@ -1,3 +1,4 @@
+/*
 package by.siarhei.beerfest.provider;
 
 import by.siarhei.beerfest.entity.impl.Article;
@@ -65,3 +66,4 @@ public class ArticleProviderTest {
         Assert.assertEquals(actual, expected);
     }
 }
+*/

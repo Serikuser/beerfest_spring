@@ -71,6 +71,6 @@
 <script src="https://kit.fontawesome.com/e9321a3cf3.js"></script>
 <script src="<c:url value="/js/auth_form.js" />"></script>
 <script src="<c:url value="/js/validation.js" />"></script>
-<script src="<c:url value="/js/header.js" />"></script>
+
 </body>
 </html>

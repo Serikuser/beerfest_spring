@@ -42,6 +42,12 @@
     <bean id="registration" class="by.siarhei.beerfest.entity.impl.Registration" scope="prototype"/>
     <bean id="user" class="by.siarhei.beerfest.entity.impl.User" scope="prototype"/>
 
+    <!--Entity factory block-->
+    <bean id="entityBuilder" class="by.siarhei.beerfest.factory.impl.EntityBuilder" depends-on="baseEntityFactory">
+        <constructor-arg ref="baseEntityFactory"/>
+    </bean>
+    <bean id="baseEntityFactory" class="by.siarhei.beerfest.factory.impl.BaseEntityFactory"/>
+
     <!--Service data validator block-->
     <bean id="serviceDataValidator" class="by.siarhei.beerfest.validator.InputDataValidator"/>
 </beans>

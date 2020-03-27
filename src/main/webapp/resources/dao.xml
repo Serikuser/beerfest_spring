@@ -7,24 +7,29 @@
     <import resource="database.xml"/>
 
     <!--DAOs block-->
-    <bean id="registration.dao" class="by.siarhei.beerfest.dao.impl.RegistrationDaoJdbcTemplateBased"
+    <bean id="registration.dao" class="by.siarhei.beerfest.dao.impl.template.RegistrationDaoJdbcTemplateBased"
           depends-on="connectionPool">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
-    <bean id="user.dao" class="by.siarhei.beerfest.dao.impl.UserDaoJdbcTemplateBased"
+    <bean id="user.dao" class="by.siarhei.beerfest.dao.impl.template.UserDaoJdbcTemplateBased"
           depends-on="connectionPool">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
-    <bean id="bar.dao" class="by.siarhei.beerfest.dao.impl.BarDaoJdbcTemplateBased"
+    <bean id="bar.dao" class="by.siarhei.beerfest.dao.impl.template.BarDaoJdbcTemplateBased"
           depends-on="connectionPool">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
-    <bean id="book.dao" class="by.siarhei.beerfest.dao.impl.BookDaoJdbcTemplateBased"
+    <bean id="book.dao" class="by.siarhei.beerfest.dao.impl.template.BookDaoJdbcTemplateBased"
           depends-on="connectionPool">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
-    <bean id="feed.dao" class="by.siarhei.beerfest.dao.impl.FeedDaoJdbcTemplateBased"
+    <bean id="feed.dao" class="by.siarhei.beerfest.dao.impl.template.FeedDaoJdbcTemplateBased"
           depends-on="connectionPool">
         <constructor-arg ref="jdbcTemplate"/>
+        <constructor-arg ref="entityBuilder"/>
     </bean>
 </beans>

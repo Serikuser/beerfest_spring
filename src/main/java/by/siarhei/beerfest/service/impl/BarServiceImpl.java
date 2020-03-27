@@ -1,10 +1,11 @@
 package by.siarhei.beerfest.service.impl;
 
-import by.siarhei.beerfest.dao.BarDao;
+import by.siarhei.beerfest.dao.api.BarDao;
 import by.siarhei.beerfest.entity.impl.Bar;
 import by.siarhei.beerfest.exception.DaoException;
 import by.siarhei.beerfest.exception.ServiceException;
-import by.siarhei.beerfest.service.BarService;
+import by.siarhei.beerfest.factory.impl.EntityBuilder;
+import by.siarhei.beerfest.service.api.BarService;
 import by.siarhei.beerfest.validator.InputDataValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,10 +18,12 @@ public class BarServiceImpl implements BarService {
 
     private BarDao barDao;
     private InputDataValidator validator;
+    private EntityBuilder builder;
 
-    private BarServiceImpl(BarDao barDao, InputDataValidator validator) {
+    private BarServiceImpl(BarDao barDao, InputDataValidator validator, EntityBuilder builder) {
         this.barDao = barDao;
         this.validator = validator;
+        this.builder = builder;
     }
 
     @Override

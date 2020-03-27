@@ -18,29 +18,17 @@
             <div class="header_item">
                 <div class="header-menu">
                     <div class="header-menu_item">
-                        <a href="javascript: void(0)" id="news"><fmt:message key="header.label.news"/></a>
-                        <form id="update" action="controller" method="POST">
-                            <input type="hidden" name="command" value="feed_update"/>
-                        </form>
+                        <a href="/Beerfest/controller?command=feed_update" id="news"><fmt:message key="header.label.news"/></a>
                     </div>
                     <div class="header-menu_item">
                         <a href="javascript: void(0)" id="gallery"><fmt:message key="header.label.gallery"/></a>
-                        <form id="galleryOpen" action="controller" method="POST">
-                            <input type="hidden" name="command" value=""/>
-                        </form>
                     </div>
                     <div class="header-menu_item">
-                        <a href="javascript: void(0)" id="participants"><fmt:message
+                        <a href="/Beerfest/controller?command=participant_list_update" id="participants"><fmt:message
                                 key="header.label.participants"/></a>
-                        <form id="participantsOpen" action="controller" method="POST">
-                            <input type="hidden" name="command" value="participant_list_update"/>
-                        </form>
                     </div>
                     <div class="header-menu_item">
                         <a href="javascript: void(0)" id="rules"><fmt:message key="header.label.rules"/></a>
-                        <form id="rulesOpen" action="controller" method="POST">
-                            <input type="hidden" name="command" value=""/>
-                        </form>
                     </div>
                 </div>
 
@@ -49,12 +37,9 @@
                 <div class="header-right-menu" style="align-items: center">
                     <c:if test="${userRole != 'UNAUTHORIZED'}">
                         <div class="header-right_menu_item">
-                            <a href="javascript:void(0)" id="profile" class="user_avatar">
+                            <a href="/Beerfest/controller?command=profile" id="profile" class="user_avatar">
                                 <img data-src="${userAvatarUrl}" src="${userAvatarUrl}"
                                      class="avatar avatar_medium" alt="...">
-                                <form id="profileOpen" action="controller" method="POST">
-                                    <input type="hidden" name="command" value="profile"/>
-                                </form>
                             </a>
                         </div>
                     </c:if>

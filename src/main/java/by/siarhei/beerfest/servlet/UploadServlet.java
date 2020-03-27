@@ -1,14 +1,14 @@
 package by.siarhei.beerfest.servlet;
 
 import by.siarhei.beerfest.command.LocaleType;
+import by.siarhei.beerfest.config.ConfigurationManager;
+import by.siarhei.beerfest.config.MessageManager;
 import by.siarhei.beerfest.config.SpringAppContext;
 import by.siarhei.beerfest.entity.RoleType;
 import by.siarhei.beerfest.exception.ServiceException;
-import by.siarhei.beerfest.manager.ConfigurationManager;
-import by.siarhei.beerfest.manager.MessageManager;
-import by.siarhei.beerfest.service.AccountService;
-import by.siarhei.beerfest.service.FeedUpdateService;
-import by.siarhei.beerfest.service.LanguageService;
+import by.siarhei.beerfest.service.api.AccountService;
+import by.siarhei.beerfest.service.api.FeedUpdateService;
+import by.siarhei.beerfest.service.api.LanguageService;
 import by.siarhei.beerfest.validator.UploadFileValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -16,25 +16,25 @@
     </div>
     <div class="sidebar-block_content">
         <div>
-            <a href="/Beerfest/controller?command=CHANGE_LOCALE&locale=ru" id="ru">
+            <a href="/Beerfest/controller?command=change_locale&locale=ru" id="ru">
                 <img src="img/lang/ru.jpg" class="lang_img"> Русский язык
             </a>
 
         </div>
         <div>
-            <a href="/Beerfest/controller?command=CHANGE_LOCALE&locale=by" id="by">
+            <a href="/Beerfest/controller?command=change_locale&locale=by" id="by">
                 <img src="img/lang/by.jpg" class="lang_img"> Беларуская мова
             </a>
 
         </div>
         <div>
-            <a href="/Beerfest/controller?command=CHANGE_LOCALE&locale=en" id="en">
+            <a href="/Beerfest/controller?command=change_locale&locale=en" id="en">
                 <img src="img/lang/en.jpg" class="lang_img">English language
             </a>
 
         </div>
     </div>
 </div>
-<script src="<c:url value="/js/change_locale.js" />"></script>
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+/*
 package by.siarhei.beerfest.provider;
 
 import by.siarhei.beerfest.entity.RoleType;
@@ -69,3 +70,4 @@ public class UserProviderTest {
         Assert.assertNotEquals(actual, expected);
     }
 }
+*/

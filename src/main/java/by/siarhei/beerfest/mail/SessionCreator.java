@@ -1,6 +1,6 @@
 package by.siarhei.beerfest.mail;
 
-import by.siarhei.beerfest.manager.MailConfigurationManager;
+import by.siarhei.beerfest.config.MailConfigurationManager;
 
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;

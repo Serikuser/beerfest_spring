@@ -1,7 +1,7 @@
 package by.siarhei.beerfest.service.impl;
 
 import by.siarhei.beerfest.command.LocaleType;
-import by.siarhei.beerfest.service.LanguageService;
+import by.siarhei.beerfest.service.api.LanguageService;
 import by.siarhei.beerfest.servlet.SessionRequestContent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

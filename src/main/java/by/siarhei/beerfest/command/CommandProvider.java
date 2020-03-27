@@ -1,5 +1,7 @@
 package by.siarhei.beerfest.command;
 
+import by.siarhei.beerfest.command.api.ActionCommand;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 

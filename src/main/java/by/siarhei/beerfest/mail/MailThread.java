@@ -1,6 +1,6 @@
 package by.siarhei.beerfest.mail;
 
-import by.siarhei.beerfest.manager.MailConfigurationManager;
+import by.siarhei.beerfest.config.MailConfigurationManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
