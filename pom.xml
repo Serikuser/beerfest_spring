@@ -18,7 +18,7 @@
         <jstl.ver>1.2</jstl.ver>
         <testng.ver>7.0.0</testng.ver>
         <log4j.ver>2.12.1</log4j.ver>
-        <log4j-core.ver>2.12.1</log4j-core.ver>
+        <log4j-core.ver>2.13.2</log4j-core.ver>
         <javax.servlet.ver>3.1.0</javax.servlet.ver>
         <mokito.ver>1.9.5</mokito.ver>
         <javax.mail.ver>1.4.7</javax.mail.ver>
