@@ -14,7 +14,7 @@
         <sptring.ver>5.2.4.RELEASE</sptring.ver>
         <aspectjweaver.ver>1.9.5</aspectjweaver.ver>
         <commons-io.ver>2.6</commons-io.ver>
-        <postgres-driver.ver>42.2.11</postgres-driver.ver>
+        <postgres-driver.ver>42.2.25</postgres-driver.ver>
         <jstl.ver>1.2</jstl.ver>
         <testng.ver>7.0.0</testng.ver>
         <log4j.ver>2.12.1</log4j.ver>
